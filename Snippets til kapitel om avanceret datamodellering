@@ -13,3 +13,37 @@ AVERAGEX (
     SELECTEDMEASURE ()
 )
 ===============================
+Current =
+SELECTEDMEASURE ()
+===============================
+YTD =
+CALCULATE (
+    SELECTEDMEASURE (),
+    DATESYTD ( 'Date'[Date] )
+)
+===============================
+PY YTD =
+CALCULATE (
+    SELECTEDMEASURE (),
+    SAMEPERIODLASTYEAR ( 'Date'[Date] ),
+    'Time Intelligence'[Show as] = "YTD"
+)
+===============================
+YOY =
+SELECTEDMEASURE (
+    - CALCULATE (
+      SELECTEDMEASURE (),
+      'Time Intelligence'[Show as] = "PY"
+    )
+===============================
+YOY% =
+DIVIDE (
+    CALCULATE (
+        SELECTEDMEASURE (),
+        'Time Intelligence'[Show as] = "YOY"
+    ),
+    CALCULATE (
+         SELECTEDMEASURE (),
+         'Time Intelligence'[Show as] = "PY"
+     )
+ )
