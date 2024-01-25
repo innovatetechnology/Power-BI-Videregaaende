@@ -47,3 +47,16 @@ DIVIDE (
          'Time Intelligence'[Show as] = "PY"
      )
  )
+===============================
+Order date =
+CALCULATE (
+    SELECTEDMEASURE (),
+    USERELATIONSHIP ( 'Date'[Date], Sales[Order Date] )
+)
+===============================
+Shipping date =
+CALCULATE (
+    SELECTEDMEASURE (),
+    USERELATIONSHIP ( 'Date'[Date], Sales[Ship Date] )
+)
+===============================
