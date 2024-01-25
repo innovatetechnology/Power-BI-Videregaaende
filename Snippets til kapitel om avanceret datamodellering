@@ -1,0 +1,15 @@
+Total =
+SELECTEDMEASURE ()
+===============================
+Daily average =
+AVERAGEX (
+    VALUES ( 'Date'[Date] ),
+    SELECTEDMEASURE ()
+)
+===============================
+Monthly average =
+AVERAGEX (
+    VALUES ( 'Date'[Month] ),
+    SELECTEDMEASURE ()
+)
+===============================
